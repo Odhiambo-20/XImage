@@ -1,0 +1,53 @@
+# Build outputs
+build/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+*.dylib
+*.app
+
+# Qt
+*.pro.user
+*.pro.user.*
+*.qmake.stash
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Compiled libraries
+HubxSDK/lib/x86/*.dll
+HubxSDK/lib/x86/*.lib
+HubxSDK/lib/x64/*.dll
+HubxSDK/lib/x64/*.lib
+HubxSDK/lib/linux/*.so
+HubxSDK/NET/x86/*.dll
+HubxSDK/NET/x64/*.dll
+
+# Test outputs
+tests/test_results/
+
+# Temporary files
+*.log
+*.tmp
+*.bak
+
+# OS specific
+.DS_Store
+Thumbs.db
