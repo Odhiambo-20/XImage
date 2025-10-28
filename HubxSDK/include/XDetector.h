@@ -1,4 +1,3 @@
-
 // ============================================================================
 
 /**
@@ -12,7 +11,6 @@
 
 #include <cstdint>
 #include <string>
-#include <cstring>
 
 namespace HX {
 
@@ -27,44 +25,44 @@ namespace HX {
  */
 class XDetector {
 public:
-    XDetector()
-        : m_cmdPort(3000)
-        , m_imgPort(4001)
-        , m_pixelCount(0)
-        , m_moduleCount(0)
-        , m_cardType(0)
-    {
-        memset(m_mac, 0, 6);
-    }
+    XDetector();
+    ~XDetector();
     
     // Network configuration
-    void SetIP(const std::string& ip) { m_ip = ip; }
-    std::string GetIP() const { return m_ip; }
+    void SetIP(const std::string& ip);
+    std::string GetIP() const;
     
-    void SetCmdPort(uint16_t port) { m_cmdPort = port; }
-    uint16_t GetCmdPort() const { return m_cmdPort; }
+    void SetCmdPort(uint16_t port);
+    uint16_t GetCmdPort() const;
     
-    void SetImgPort(uint16_t port) { m_imgPort = port; }
-    uint16_t GetImgPort() const { return m_imgPort; }
+    void SetImgPort(uint16_t port);
+    uint16_t GetImgPort() const;
     
-    void SetMAC(const uint8_t* mac) {
-        if (mac) memcpy(m_mac, mac, 6);
-    }
-    const uint8_t* GetMAC() const { return m_mac; }
+    void SetMAC(const uint8_t* mac);
+    const uint8_t* GetMAC() const;
     
     // Device identification
-    void SetSerialNum(const std::string& sn) { m_serialNum = sn; }
-    std::string GetSerialNum() const { return m_serialNum; }
+    void SetSerialNum(const std::string& sn);
+    std::string GetSerialNum() const;
     
     // Hardware specifications
-    void SetPixelCount(uint32_t count) { m_pixelCount = count; }
-    uint32_t GetPixelCount() const { return m_pixelCount; }
+    void SetPixelCount(uint32_t count);
+    uint32_t GetPixelCount() const;
     
-    void SetModuleCount(uint8_t count) { m_moduleCount = count; }
-    uint8_t GetModuleCount() const { return m_moduleCount; }
+    void SetModuleCount(uint8_t count);
+    uint8_t GetModuleCount() const;
     
-    void SetCardType(uint8_t type) { m_cardType = type; }
-    uint8_t GetCardType() const { return m_cardType; }
+    void SetCardType(uint8_t type);
+    uint8_t GetCardType() const;
+    
+    void SetPixelSize(uint8_t size);
+    uint8_t GetPixelSize() const;
+    
+    void SetPixelDepth(uint8_t depth);
+    uint8_t GetPixelDepth() const;
+    
+    void SetFirmwareVersion(uint16_t version);
+    uint16_t GetFirmwareVersion() const;
     
 private:
     std::string m_ip;
@@ -75,6 +73,9 @@ private:
     uint32_t m_pixelCount;
     uint8_t m_moduleCount;
     uint8_t m_cardType;
+    uint8_t m_pixelSize;
+    uint8_t m_pixelDepth;
+    uint16_t m_firmwareVersion;
 };
 
 } // namespace HX
